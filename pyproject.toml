@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "structured-wing-surrogate-cfd"
+version = "0.1.0"
+description = "Whole-case 3D structured-grid wing surrogates, physics evaluation, and Newton recovery."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "h5py",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "parametric-swept-wing-cfd>=0.1.0",
+    "PyYAML",
+    "scipy",
+    "surrogate-newton-cfd>=0.1.0",
+    "torch",
+]
+
+[project.optional-dependencies]
+analysis = ["scikit-learn", "pyvista"]
+solver = ["mpi4py"]
+dev = ["pytest", "ruff"]
+
+[project.scripts]
+structured-wing-train = "surrogate3d.cli.train:main"
+structured-wing-evaluate = "surrogate3d.cli.evaluate:main"
+structured-wing-nk-recover = "surrogate3d.cli.nk_recover:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+markers = [
+    "integration: requires external CFD data and/or the compiled solver stack",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

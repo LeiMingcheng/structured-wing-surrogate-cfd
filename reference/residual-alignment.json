@@ -1,0 +1,214 @@
+{
+  "blocks": [
+    {
+      "block_index": 0,
+      "cell_shape": [
+        112,
+        20,
+        48
+      ],
+      "valid_cells": 76032,
+      "zone_name": "domain.00001"
+    },
+    {
+      "block_index": 1,
+      "cell_shape": [
+        8,
+        20,
+        48
+      ],
+      "valid_cells": 2816,
+      "zone_name": "domain.00002"
+    },
+    {
+      "block_index": 2,
+      "cell_shape": [
+        112,
+        20,
+        48
+      ],
+      "valid_cells": 76032,
+      "zone_name": "domain.00003"
+    },
+    {
+      "block_index": 3,
+      "cell_shape": [
+        8,
+        20,
+        48
+      ],
+      "valid_cells": 2816,
+      "zone_name": "domain.00004"
+    },
+    {
+      "block_index": 4,
+      "cell_shape": [
+        112,
+        40,
+        48
+      ],
+      "valid_cells": 171072,
+      "zone_name": "domain.00005"
+    },
+    {
+      "block_index": 5,
+      "cell_shape": [
+        8,
+        40,
+        48
+      ],
+      "valid_cells": 6336,
+      "zone_name": "domain.00006"
+    },
+    {
+      "block_index": 6,
+      "cell_shape": [
+        112,
+        40,
+        48
+      ],
+      "valid_cells": 171072,
+      "zone_name": "domain.00007"
+    },
+    {
+      "block_index": 7,
+      "cell_shape": [
+        8,
+        40,
+        48
+      ],
+      "valid_cells": 6336,
+      "zone_name": "domain.00008"
+    },
+    {
+      "block_index": 8,
+      "cell_shape": [
+        112,
+        16,
+        48
+      ],
+      "valid_cells": 57024,
+      "zone_name": "domain.00009"
+    },
+    {
+      "block_index": 9,
+      "cell_shape": [
+        8,
+        16,
+        48
+      ],
+      "valid_cells": 2112,
+      "zone_name": "domain.00010"
+    },
+    {
+      "block_index": 10,
+      "cell_shape": [
+        112,
+        16,
+        48
+      ],
+      "valid_cells": 57024,
+      "zone_name": "domain.00011"
+    },
+    {
+      "block_index": 11,
+      "cell_shape": [
+        8,
+        16,
+        48
+      ],
+      "valid_cells": 2112,
+      "zone_name": "domain.00012"
+    },
+    {
+      "block_index": 12,
+      "cell_shape": [
+        8,
+        112,
+        48
+      ],
+      "valid_cells": 19008,
+      "zone_name": "domain.00013"
+    }
+  ],
+  "components": {
+    "RE": {
+      "adflow_over_torch_scale": 0.9997423425610842,
+      "adflow_rms": 69.37952474948592,
+      "correlation": 0.9999794375929736,
+      "relative_rmse": 0.006417301423474799,
+      "scaled_relative_rmse": 0.006412124352445939,
+      "torch_rms": 69.39597884367518
+    },
+    "RSA": {
+      "adflow_over_torch_scale": 0.9999999999969563,
+      "adflow_rms": 1.725666624735668e-05,
+      "correlation": 0.9999999999999994,
+      "relative_rmse": 2.86321232394856e-10,
+      "scaled_relative_rmse": 2.863050548725059e-10,
+      "torch_rms": 1.7256666247409204e-05
+    },
+    "Rc": {
+      "adflow_over_torch_scale": 0.9997953417235724,
+      "adflow_rms": 17.315156407726754,
+      "correlation": 0.9999767142451031,
+      "relative_rmse": 0.006826467080344975,
+      "scaled_relative_rmse": 0.006823397437519169,
+      "torch_rms": 17.31829764994092
+    },
+    "Rmx": {
+      "adflow_over_torch_scale": 1.0008272371642624,
+      "adflow_rms": 29.408874250818826,
+      "correlation": 0.9999951257261117,
+      "relative_rmse": 0.0032286207865289238,
+      "scaled_relative_rmse": 0.003121026802324064,
+      "torch_rms": 29.384423130502853
+    },
+    "Rmy": {
+      "adflow_over_torch_scale": 1.0001171454880318,
+      "adflow_rms": 20.782837950281163,
+      "correlation": 0.9999909241938126,
+      "relative_rmse": 0.004262163639213428,
+      "scaled_relative_rmse": 0.004260553870770729,
+      "torch_rms": 20.780215012641012
+    },
+    "Rmz": {
+      "adflow_over_torch_scale": 1.0001143683834637,
+      "adflow_rms": 13.03476416575593,
+      "correlation": 0.9999791920704234,
+      "relative_rmse": 0.0064519510878990076,
+      "scaled_relative_rmse": 0.006450937625577978,
+      "torch_rms": 13.033002381296209
+    }
+  },
+  "eddy_viscosity": {
+    "adflow_over_torch_scale": 1.0,
+    "adflow_rms": 5.073846444206813e-06,
+    "correlation": 1.0,
+    "relative_rmse": 6.459549632523499e-18,
+    "scaled_relative_rmse": 6.459549632523499e-18,
+    "torch_rms": 5.073846444206813e-06
+  },
+  "flow_conditions": {
+    "aoa": -1.0776189507803258,
+    "mach": 0.7802734117436309,
+    "reynolds": 20000000.0
+  },
+  "formulation": "interior_jameson_continuity_momentum_energy_viscous_sa",
+  "scope": {
+    "included": [
+      "continuity",
+      "three_momentum_equations",
+      "energy_equation",
+      "sa_transport_equation",
+      "scalar_jameson_dissipation",
+      "laminar_viscosity",
+      "sa_eddy_viscosity"
+    ],
+    "not_included": [
+      "boundary_and_cross_block_halo_cells"
+    ]
+  },
+  "source_case": "external-artifact:surrogate-restart-alignment-case",
+  "valid_cells": 649792
+}

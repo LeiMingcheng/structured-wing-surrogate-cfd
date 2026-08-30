@@ -1,0 +1,59 @@
+experiment:
+  name: global_fno
+  seed: 0
+
+data:
+  index_path: null
+  batch_size: 2
+  val_fraction: 0.05
+  num_cases: null
+  num_workers: 2
+  cache_size_mb: 16
+  split_by_sample_id: true
+  shuffle_train: true
+
+normalization:
+  normalize: true
+  scale_turbulent: true
+  turbulent_stats_path: null
+  turbulent_channel_idx: 5
+
+model:
+  patch_size: [4, 2, 4]
+  coord_channels: 6
+  width: 64
+  modes: [8, 8, 8]
+  n_layers: 6
+  condition_dim: 192
+  global_layers: 2
+  input_state_channels: 0
+  post_global_layers: 1
+
+training:
+  epochs: 2000
+  max_steps: null
+  log_every: 20
+  output_dir: runs/global_fno
+  load_training_state: false
+  checkpoint_every_epochs: null
+  save_every_steps: 5000
+  optimizer:
+    name: adamw
+    lr: 2.0e-4
+    weight_decay: 0.0
+  warmup_ratio: 0.03
+  eta_min_ratio: 0.05
+  gradient_clip_norm: 1.0
+  per_block_equal_weight: false
+  volume_weighted_mse_weight: 1.0
+  surface_cp_weight: 1.0
+  surface_cf_weight: 0.25
+  surface_loss_dtype: float32
+  loss:
+    use_volume_weighted_mse: true
+    volume_weight_alpha: 0.5
+    volume_weight_max: 1000.0
+
+runtime:
+  device: cuda
+  checkpoint: null
