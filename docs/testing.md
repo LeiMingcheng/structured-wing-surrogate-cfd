@@ -11,10 +11,21 @@ residual cases. They may run on CPU because the tensors are deliberately tiny.
 
 ## GPU training smoke
 
-The GPU smoke uses a small external 13-block shard and the production model
-path with `torchrun`. It verifies CUDA execution, DDP synchronization, and one
-checkpoint write. It is separate from the portable checks because Git does not
-contain the CFD shard.
+The included availability smoke creates a deterministic two-block synthetic
+dataset and launches two CUDA processes through `torchrun`:
+
+```bash
+scripts/smoke_ddp_2gpu.sh
+```
+
+It verifies that both DDP ranks can load the whole-case path, run forward and
+backward, apply one optimizer step, and write a reloadable checkpoint. The
+small tensors exercise the distributed wiring rather than representative
+training cost.
+
+A production-data smoke remains a separate integration check. It uses an
+external 13-block shard with `configs/global-fno-gpu.yaml` to verify actual
+shapes and memory pressure; Git does not contain that CFD shard.
 
 ## Solver integration
 

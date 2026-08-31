@@ -1,0 +1,55 @@
+experiment:
+  name: ddp_smoke
+  seed: 7
+
+data:
+  index_path: null
+  batch_size: 1
+  val_fraction: 0.0
+  num_cases: null
+  num_workers: 0
+  cache_size_mb: 8
+  split_by_sample_id: true
+  shuffle_train: true
+
+normalization:
+  normalize: false
+  scale_turbulent: false
+  turbulent_channel_idx: 5
+
+model:
+  patch_size: [4, 2, 4]
+  coord_channels: 6
+  width: 4
+  modes: [1, 1, 1]
+  n_layers: 1
+  condition_dim: 8
+  global_layers: 1
+  input_state_channels: 0
+  post_global_layers: 1
+
+training:
+  epochs: 1
+  max_steps: 1
+  log_every: 1
+  output_dir: runs/ddp_smoke
+  load_training_state: false
+  checkpoint_every_epochs: null
+  save_every_steps: 0
+  optimizer:
+    name: adamw
+    lr: 1.0e-4
+    weight_decay: 0.0
+  warmup_ratio: 0.0
+  eta_min_ratio: 1.0
+  gradient_clip_norm: 1.0
+  per_block_equal_weight: true
+  volume_weighted_mse_weight: 0.0
+  surface_cp_weight: 0.0
+  surface_cf_weight: 0.0
+  loss:
+    use_volume_weighted_mse: false
+
+runtime:
+  device: cuda
+  checkpoint: null

@@ -52,12 +52,15 @@ For a production GPU run, supply the dataset index and output directory
 explicitly:
 
 ```bash
-$CONDA_PREFIX/bin/torchrun --standalone --nproc-per-node=8 \
-  -m surrogate3d.cli.train \
-  --config configs/global-fno-gpu.yaml \
-  --index /path/to/structured-dataset/index.csv \
-  --output-dir /path/to/run
+DATASET_INDEX=/path/to/structured-dataset/index.csv \
+TRAIN_OUTPUT_DIR=/path/to/run \
+scripts/train_global_fno_2gpu.sh
 ```
+
+This two-GPU default is the smallest maintained DDP launch. Increase
+`NPROC_PER_NODE` when scaling the same training path to more local GPUs. A
+one-step synthetic DDP availability check is provided by
+`scripts/smoke_ddp_2gpu.sh`; it does not replace a full 13-block dataset run.
 
 ## Release status
 
