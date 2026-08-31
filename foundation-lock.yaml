@@ -4,7 +4,7 @@ foundations:
     repository: https://github.com/LeiMingcheng/parametric-swept-wing-cfd.git
     revision: cff53b2fabf89e9ad060337bc9f1ec8ff8d1fc68
     package: parametric_swept_wing_cfd
-    availability: pending_upstream_push
+    availability: authenticated_private_remote
   surrogate-newton-cfd:
     repository: https://github.com/LeiMingcheng/surrogate-newton-cfd.git
     tag: v0.1.0-rc1

@@ -20,8 +20,8 @@ Not selected in the initial migration:
 - generated datasets, validation directories, reports, and run products;
 - private checkpoints and normalization assets;
 - internal handoff notes and machine-specific campaign launchers;
-- geometry-OOD campaign scripts that still require path and data-contract
-  cleanup.
+- geometry-OOD campaign scripts, which are deliberately left to the separate
+  benchmark effort.
 
 The two external project revisions used during migration are recorded in
 `foundation-lock.yaml`.
