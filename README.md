@@ -323,8 +323,7 @@ tests/        portable unit and contract tests
 
 ## Repository and release status
 
-This checkout is a tested private release snapshot. It can be pushed to a
-private Git remote after the locked foundation revisions are available to the
-same users. Before changing repository visibility to public, select a root
-open-source license and confirm copyright-holder metadata for this repository
-and `parametric-swept-wing-cfd`; see [`NOTICE.md`](NOTICE.md).
+The repository code is released under the [BSD 3-Clause License](LICENSE).
+See [`NOTICE.md`](NOTICE.md) for the licenses of external dependencies.
+Workflows that use `parametric-swept-wing-cfd` require access to its private
+repository at the revision documented in [`foundation-lock.yaml`](foundation-lock.yaml).

@@ -2,10 +2,8 @@
 
 ## Root project
 
-This repository is currently a private release-staging workspace. No license
-has yet been granted for the original Structured Wing Surrogate CFD code. A
-root open-source license and copyright-holder list must be selected before
-public release.
+The original Structured Wing Surrogate CFD code is licensed under the
+[BSD 3-Clause License](LICENSE). Copyright (c) 2026, Mingcheng Lei and Weishao Tang.
 
 ## Foundation projects
 
